@@ -22,6 +22,11 @@ public class Utils {
 		
 	}
 	
+	public static String convertDateToString(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(date);
+	}
+	
 	
 
 }

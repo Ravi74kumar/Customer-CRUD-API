@@ -11,7 +11,7 @@ import com.shellCompany.Ravikumar.CRED.dto.CustomerRequest;
 
 
 @Component
-public class CustomerReqMapper {
+public class CustomerMapper {
 	
 	public Customer mapCustomerDto(CustomerRequest custReq) {
 		Customer customerDto = new Customer();
@@ -28,6 +28,18 @@ public class CustomerReqMapper {
 		
 		return customerDto;
 		
+	}
+	
+	public CustomerDetails mapCustomerDetailDto(Customer cust) {
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setAddressLane1(cust.getAddressLane1());
+		customerDetails.setAddressLane2(cust.getAddressLane2());
+		customerDetails.setCity(cust.getCity());
+		customerDetails.setCustId(cust.getCustId());
+		customerDetails.setDateOfBirth(Utils.convertDateToString(cust.getDateOfBirth()));
+		customerDetails.setName(cust.getName());
+		customerDetails.setZipCode(cust.getZipCode());
+		return customerDetails;
 	}
 
 }
